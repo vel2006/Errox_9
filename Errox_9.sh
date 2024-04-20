@@ -1,5 +1,6 @@
 #!/bin/bash
 #-GETTING THE INTERFACES AVALABLE TO THE USER-#
+echo "Collecting device interfaces"
 #SAVING THE INTERFACES IN A TEMP ARRAY#
 temp=($(ifconfig | grep -E ": flags=" | awk -F '[:]' '{print $1}'))
 #HOLDING USABLE INTERFACES#
@@ -14,6 +15,7 @@ done
 echo "Collected device interfaces"
 #-GOING THROUGH THE INTERFACES AND SCANNING THE NETWORK WITH arp-scan TO FIND HOSTS-#
 for i in ${!interfaces[@]}; do
+	echo "Getting network information on ${interfaces[$i]} interface"
 	#GETTING THE USER'S IP#
 	userIP=$(ip a | grep "inet" | grep "brd" | awk '{print $2}' | awk -F '[/]' '{print $1}')
 	#CALCULATING THE BASE IP FOR THE NETWORK#
@@ -25,9 +27,11 @@ for i in ${!interfaces[@]}; do
 	#HOLDING FOUND IPs, MACs, AND THE NETWORK TYPE#
 	IPs=()
 	MACs=()
+ 	echo "Getting network speed and type"
 	type=$(echo "$scanResult" | grep -oE 'type:+ [[:alnum:]]+' | awk '{print $2}')
 	#HOLDING THE IPs WITHIN A TEMP ARRAY TO CHECK IF IT'S NEEDED#
 	temp=($(echo "$output" | grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' | awk '{print $1}'))
+ 	echo "Getting network devices IPs"
 	#LOOPING THROUGH THE IPs#
 	for i in ${!temp[@]}; do
 		#CHECKING TO SEE IF THE IP IS THE USER OR NETWORK MIN#
@@ -38,6 +42,7 @@ for i in ${!interfaces[@]}; do
 	done
 	#HOLDING THE MACs WITHIN A TEMP ARRAY TO CHECK IF IT'S NEEDED#
 	temp=($(echo "$output" | grep -oE "([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}"))
+ 	echo "Getting network device MAC addresses"
 	#LOOPING THROUGH THE MACs#
 	for i in ${!temp[@]}; do
 		#CHECKING TO SEE IF THE MAC ADDRESS IS THE USER'S#
