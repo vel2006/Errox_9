@@ -2,6 +2,8 @@
 ## Small note from the dev
 Errox_9 is a bash script that uses tools to scan the user's local network for devices using arp-scan. The script is as quiet as I could make it within this first post and will be updated more than once unlike Errox_8. Errox_9 should be getting updated biweekly or so, with this time of the year bringing EOCs and other tests, the updates could take longer than expected.
 
+### Errox_9 version
+Version: 1.0
 ### Needed tools
 1) arp-scan
 2) ifconfig
