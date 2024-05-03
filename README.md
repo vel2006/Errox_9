@@ -1,7 +1,7 @@
 # Errox_9
 
 # MESSAGE FROM THE DEV!!!
-## Errox_9 will be changing languages from Bash to Java on the 2.0 version update, it is in the testing stage (two of five for those who dont know my work flow) and will be online in around four weeks.
+## Errox_9 will be changing languages from Bash to Python on the 2.0 version update, it is in the testing stage (two of five for those who dont know my work flow) and will be online in around four weeks.
 
 ## Small note from the dev
 Errox_9 is a bash script that uses tools to scan the user's local network for devices using arp-scan. The script is as quiet as I could make it within this first post and will be updated more than once unlike Errox_8. Errox_9 should be getting updated biweekly or so, with this time of the year bringing EOCs and other tests, the updates could take longer than expected.
