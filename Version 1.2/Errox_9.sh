@@ -108,6 +108,7 @@ for i in ${!interfaces[@]}; do
 			echo "Errox_9 1.2 has added these features:"
 			echo "    1) Different scanning methods"
 			echo "    2) Slightly quieter scan methods"
+   			echo "    3) Seconds to run script"
 			echo "Here is how to use Errox_9 in its 1.2 version:"
 			echo "    1) Use sudo when running Errox_9, it is needed for two of the methods (1 & 3)"
 			echo "    2) Select the type you wish to use:"
