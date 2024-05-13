@@ -1,6 +1,19 @@
 #!/bin/bash
 #-PRINTING OUT THE CURRENT VERSION OF 'Errox_9', DUE TO ME CHANGING TO JAVA, BUT THIS WILL STAY THE SAME-#
 echo "Version: 1.1"
+if [[ $1 == "-h" ]]; then
+	echo " _________________ _______   __  _____ "
+	echo "|  ___| ___ \ ___ \  _  \ \ / / |  _  |"
+	echo "| |__ | |_/ / |_/ / | | |\ V /  | |_| |"
+	echo "|  __||    /|    /| | | |/   \  \____ |"
+	echo "| |___| |\ \| |\ \\\\ \_/ / /^\ \ .___/ /"
+	echo "\____/\_| \_\_| \_|\___/\/   \/ \____/"
+	echo ""
+ 	echo "Hello user. Errox_9 is a very simple yet diverse script, this is the 1.1 version, which lays the foundation for other versions."
+  	echo "Here is how to use Errox_9 in its 1.2 version:"
+	echo "    1) Use sudo when running Errox_9, it is needed."
+	echo "    2) Format like this: 'sudo ./Errox_9.sh' and let Errox_9 do the rest for you"
+	echo "Happy pentesting, and support the creator at: 'https://github.com/vel2006/Errox_9"
 #-GETTING THE START TIME, FOR TELLING THE USER HOW LONG THE SCRIPT TAKES-#
 start=$(date +%s)
 #-GETTING THE INTERFACES AVALABLE TO THE USER-#
