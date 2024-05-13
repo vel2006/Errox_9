@@ -34,6 +34,10 @@ for i in ${!interfaces[@]}; do
 	base+="."
 	if [[ $# == 1 ]]; then
 		if [[ $1 == 1 ]]; then
+  			if [[ $(whoami) != "root" ]]; then
+     				echo "Run with sudo please."
+	 			exit
+     			fi
 			for (( j = 1; j < 256; j++ )); do
 				temp=$(arping -c 1 -w 1 $base$j)
 				if [[ $(echo "$temp" | grep -E "[[:xdigit:]]+:[[:xdigit:]]+:") ]]; then
@@ -52,8 +56,6 @@ for i in ${!interfaces[@]}; do
 					readarray -t lines < <(arp -a)
 					for k in ${!lines[@]}; do
 						if [[ $(echo "${lines[$k]}" | grep -E "at [[:xdigit:]]") && $(echo "${lines[$k]}" | grep -E "at [[:xdigit:]]" | awk -F '[()]' '{print $2}') != "$userIP" ]]; then
-							echo "${IPs[@]}"
-							echo ""
 							add=1
 							for l in ${!IPs[@]}; do
 								if [[ $(echo "${lines[$k]}" | grep -E "at [[:xdigit:]]" | awk -F '[()]' '{print $2}') == "${IPs[$l]}" ]]; then
@@ -73,6 +75,10 @@ for i in ${!interfaces[@]}; do
 			echo "IPs: ${IPs[@]}"
 			echo "MACs: ${MACs[@]}"
 		elif [[ $1 == 3 ]]; then
+  			if [[ $(whoami) != "root" ]]; then
+     				echo "Run with root please."
+	 			exit
+     			fi
 			scanResult=$(sudo arp-scan -I ${interfaces[$i]} --localnet --format='${ip}\t${mac}')
 			temp=($(echo "$scanResult" | grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' | awk '{print $1}'))
 			for j in ${!temp[@]}; do
