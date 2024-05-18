@@ -1,12 +1,6 @@
 # Errox_9
 ## Newest version: 1.3
 
-# MESSAGE FROM THE DEV!!!
-## Errox_9 will be changing languages from Bash to Python on the 2.0 version update, version 1.1 to the most up to date will remain within this repo, if a version is found to be broken it will not be included. Thank you for your time.
-
-## Small note from the dev
-Errox_9 is a bash script that uses tools to scan the user's local network for devices using arp-scan. The script is as quiet as I could make it within this first post and will be updated more than once unlike Errox_8. Errox_9 should be getting updated biweekly or so, with this time of the year bringing EOCs and other tests, the updates could take longer than expected.
-
 ### Errox_9 version needed tools:
 Version: 1.1
 1) arp-scan
