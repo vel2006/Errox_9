@@ -1,7 +1,7 @@
 # Errox_9
 ## Newest version: 1.3
 
-### Errox_9 version needed tools:
+### Version needed tools:
 Version: 1.1
 1) arp-scan
 2) ifconfig
