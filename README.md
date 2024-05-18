@@ -1,4 +1,5 @@
 # Errox_9
+##Newest version: 1.3
 
 # MESSAGE FROM THE DEV!!!
 ## Errox_9 will be changing languages from Bash to Python on the 2.0 version update, version 1.1 to the most up to date will remain within this repo, if a version is found to be broken it will not be included. Thank you for your time.
@@ -23,9 +24,16 @@ Version: 1.2
 5) grep
 6) awk
 
+Version: 1.3
+1) arping
+2) arping
+3) arp-scan
+4) ifconfig
+5) grep
+6) awk
+
 ### How to use
 Errox_9 is a very user friendly script, but must be ran with sudo perms. Errox_9 is not tested on wireless networks, it has only been tested on ethernet networks within vm software. For details on how each version works, use '-h' when using './Errox_9.sh' inside of its directory. In the even that it doesnt work, please submit it as an issue on 'https://github.com/vel2006/Errox_9'.
 
 ## Updates to come:
-1) Faster scan time
-2) Possible port scanning included
+1) More ways to scan
