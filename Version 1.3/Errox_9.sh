@@ -55,7 +55,7 @@ if [[ $1 == "-h" ]]; then
 	echo "Happy pentesting."
 	exit
 fi
-#-MAKING ARPING METHOD FOR PARALELL-#
+#-MAKING ARPING METHOD FOR PARALLEL-#
 arpingIP()
 {
 	local temp=$(arping -c 1 -w 1 -I $1 $2)
@@ -63,7 +63,7 @@ arpingIP()
 		echo $(echo "$temp" | grep -E "from +" | awk '{print $4}')%$2 >> $3
 	fi
 }
-#-MAKING PING METHOD FOR PARALELL-#
+#-MAKING PING METHOD FOR PARALLEL-#
 pingIP()
 {
 	local temp=$(ping -c 1 -s 5 -W 5 -I $1 $2)
