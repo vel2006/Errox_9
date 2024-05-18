@@ -1,5 +1,5 @@
 # Errox_9
-##Newest version: 1.3
+## Newest version: 1.3
 
 # MESSAGE FROM THE DEV!!!
 ## Errox_9 will be changing languages from Bash to Python on the 2.0 version update, version 1.1 to the most up to date will remain within this repo, if a version is found to be broken it will not be included. Thank you for your time.
