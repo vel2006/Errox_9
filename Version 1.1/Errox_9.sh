@@ -14,6 +14,8 @@ if [[ $1 == "-h" ]]; then
 	echo "    1) Use sudo when running Errox_9, it is needed."
 	echo "    2) Format like this: 'sudo ./Errox_9.sh' and let Errox_9 do the rest for you"
 	echo "Happy pentesting, and support the creator at: 'https://github.com/vel2006/Errox_9"
+ 	exit
+  fi
 #-GETTING THE START TIME, FOR TELLING THE USER HOW LONG THE SCRIPT TAKES-#
 start=$(date +%s)
 #-GETTING THE INTERFACES AVALABLE TO THE USER-#
