@@ -15,6 +15,9 @@ elif [[ $2 != "s" && -n $2 ]]; then
 	echo "Error, unknown second argument: $2"
 	echo "Use '-h' as first argument for help"
 	exit
+elif [[ $(whoami) != "root" ]]; then
+	echo "Error, please run this script as root."
+ 	exit
 fi
 if [[ $1 == "-h" ]]; then
 	echo "Hello user. Errox_9 is a very simple yet diverse script, this is the 1.3 version, which has some needed changes to 1.2."
@@ -60,7 +63,7 @@ arpingIP()
 {
 	local temp=$(arping -c 1 -w 1 -I $1 $2)
 	if [[ $(echo "$temp" | grep -E "[[:xdigit:]]+:[[:xdigit:]]+:") ]]; then
-		echo $(echo "$temp" | grep -E "from +" | awk '{print $4}')%$2 >> $3
+		sudo echo $(echo "$temp" | grep -E "from +" | awk '{print $4}')%$2 >> "$3"
 	fi
 }
 #-MAKING PING METHOD FOR PARALLEL-#
@@ -69,7 +72,7 @@ pingIP()
 	local temp=$(ping -c 1 -s 5 -W 5 -I $1 $2)
 	echo "$(arp -a)" | while IFS= read -r line; do
 		if [[ $(echo "$line" | grep -E "$2") && $(echo "$line" | grep -E "[[:xdigit:]][[:xdigit:]]:") ]]; then
-			echo $(echo "$line" | grep -oE "[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]")%$2 >> $3
+			sudo echo $(echo "$line" | grep -oE "[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]:[[:xdigit:]][[:xdigit:]]")%$2 >> "$3"
 		fi
 	done
 }
@@ -188,5 +191,5 @@ done
 #-GETTING THE END TIME AND HOW LONG IT TAKES IN SECONDS-#
 end=$(date +%s)
 total=$((end - start))
-rm "$(pwd)/tempFile"
+sudoo rm "$(pwd)/tempFile"
 echo "It took $total seconds to run this script"
