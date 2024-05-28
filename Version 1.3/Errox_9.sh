@@ -76,7 +76,7 @@ pingIP()
 		fi
 	done
 }
-touch tempFile
+sudo touch tempFile
 #-GETTING THE START TIME, FOR TELLING THE USER HOW LONG THE SCRIPT TAKES WHEN THE SCRIPT IS DONE-#
 start=$(date +%s)
 #-GETTING THE INTERFACES AVALABLE TO THE USER-#
@@ -191,5 +191,5 @@ done
 #-GETTING THE END TIME AND HOW LONG IT TAKES IN SECONDS-#
 end=$(date +%s)
 total=$((end - start))
-sudoo rm "$(pwd)/tempFile"
+sudoo sudo rm "$(pwd)/tempFile"
 echo "It took $total seconds to run this script"
